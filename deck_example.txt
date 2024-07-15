@@ -1,0 +1,29 @@
+CARDS
+ash_blossom_and_joyous_spring 3 m ne
+infinte_impermenance 3 t ne
+ghost_ogre_and_snow_rabbit 2 m ne
+effect_veiler 3 m ne
+herald_of_orange_light 3 m ne
+vernusylph_of_the_misting_seedlings 3 m e
+emergency_teleport 3 s e
+vernusylph_of_the_flourishing_hills 2 m e
+vernusylph_of_the_flowering_fields 1 m e
+noh_punk_ze_amin 1 m e
+noh_punk_foxy_tune 1 m e
+noh_punk_deer_note 1 m b
+madolche_puddingcess 1 m b
+madolche_messangelato 2 m b
+madolche_salon 1 s e
+madolche_chateau 1 s b
+madolche_promenade 1 t b
+madolche_petingcessour 3 m e
+madolche_hootcake 2 m e
+madolche_anjelly 3 m e
+COMBOS
+1 madolche_anjelly
+1 madolche_petingcessour
+2 madolche_anjelly madolche_petingcessour
+5 madolche_hootcake vernusylph_of_the_misting_seedlings
+4 madolche_hootcake vernusylph_of_the_flourishing_hills
+5 madolche_petingcessour vernusylph_of_the_misting_seedlings
+6 madolche_petingcessour emergency_teleport
