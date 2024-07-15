@@ -1,0 +1,46 @@
+CARDS
+ash_blossom_and_joyous_spring 3 m ne
+infinte_impermenance 3 t ne
+effect_veiler 3 m ne
+ghost_mourner_and_moonlit_chill 3 m ne
+dimensional_shifter 3 m ne
+book_of_eclipse 2 s ne
+ritual_beast_tamer_elder 3 m e
+spiritual_beast_tamer_lara 3 m e
+spiritual_beast_cannahawk 3 m e
+spiritual_beast_rampengu 3 m e
+ritual_beast_tamer_lara 1 m b
+ritual_beast_tamer_wen 1 m b
+spiritual_beast_tamer_winda 1 m b
+spiritual_beast_apelio 1 m b
+ritual_beast_inheritance 2 s e
+ritual_beast_steeds 1 t b
+ritual_beast_bonds 1 s b
+nemeses_flag 1 m b
+nemeses_umbrella 1 m b
+emergency_teleport 2 s e
+COMBOS
+5 ritual_beast_tamer_elder spiritual_beast_cannahawk
+5 ritual_beast_tamer_elder spiritual_beast_rampengu
+4 ritual_beast_tamer_elder spiritual_beast_tamer_lara
+2 ritual_beast_tamer_elder emergency_teleport
+3 ritual_beast_tamer_elder spiritual_beast_apelio
+3 ritual_beast_tamer_elder spiritual_beast_tamer_winda
+3 ritual_beast_tamer_lara spiritual_beast_tamer_lara
+3 ritual_beast_tamer_lara emergency_teleport
+1 ritual_beast_tamer_wen emergency_teleport
+1 ritual_beast_tamer_wen spiritual_beast_tamer_lara
+2 ritual_beast_tamer_elder ritual_beast_inheritance
+2 spiritual_beast_apelio ritual_beast_inheritance
+2 spiritual_beast_apelio emergency_teleport
+3 spiritual_beast_cannahawk ritual_beast_inheritance
+3 spiritual_beast_rampengu ritual_beast_inheritance
+2 spiritual_beast_tamer_lara ritual_beast_inheritance
+2 spiritual_beast_tamer_lara spiritual_beast_tamer_winda
+2 spiritual_beast_tamer_lara emergency_teleport
+1 spiritual_beast_cannahawk
+1 spiritual_beast_rampengu
+3 spiritual_beast_cannahawk emergency_teleport
+3 spiritual_beast_rampengu emergency_teleport
+1 ritual_beast_tamer_elder ritual_beast_tamer_lara ritual_beast_bonds
+1 ritual_beast_tamer_elder ritual_beast_tamer_lara ritual_beast_bonds
