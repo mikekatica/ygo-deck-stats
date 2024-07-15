@@ -84,6 +84,14 @@ class Deck():
             self.cards
         ))
         return cards
+    
+    def get_simulated_cards(self):
+        out = []
+        for card in self.cards:
+            out.extend([
+                card for _ in range(0,card.count)
+            ])
+        return out
 
     
     def __str__(self) -> str:

@@ -1,0 +1,34 @@
+CARDS
+bonfire 3 s e
+snake_eye_ash 3 m e
+snake_eye_poplar 2 m e
+snake_eye_oak 1 m e
+snake_eye_flamberge_dragon 2 m b
+snake_eyes_diabellstar 1 m b
+diabellstar_the_black_witch 3 m e
+wanted_the_seeker_of_sinful_spoils 3 s e
+fiendsmith_engraver 3 m e
+fiendsmith_tract 1 s e
+fabled_lurrie 1 m b
+original_sinful_spoils 1 s e
+divine_temple_of_the_snake_eye 1 s b
+ash_blossom_and_joyous_spring 3 m ne
+infinte_impermenance 3 t ne
+ghost_ogre_and_snow_rabbit 3 m ne
+effect_veiler 3 m ne
+ghost_mourner_and_moonlit_chill 3 m ne
+COMBOS
+1 snake_eye_poplar
+1 bonfire
+2 snake_eye_ash
+2 wanted_the_seeker_of_sinful_spoils
+2 diabellstar_the_black_witch
+2 fiendsmith_engraver
+5 snake_eye_ash diabellstar_the_black_witch
+5 snake_eye_ash wanted_the_seeker_of_sinful_spoils
+4 snake_eye_ash original_sinful_spoils
+3 fiendsmith_tract ash_blossom_and_joyous_spring
+3 fiendsmith_tract ghost_ogre_and_snow_rabbit
+3 fiendsmith_tract effect_veiler
+3 fiendsmith_tract ghost_mourner_and_moonlit_chill
+3 fiendsmith_tract snake_eye_poplar
