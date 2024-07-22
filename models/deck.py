@@ -31,6 +31,9 @@ class Card():
 
     def __repr__(self) -> str:
         return self.__str__()
+    
+    def __eq__(self, other):
+        return other.name == self.name and other.count == self.count
 
 
 class Combo():
