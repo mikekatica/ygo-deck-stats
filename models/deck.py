@@ -1,6 +1,7 @@
 from enum import Enum
 from typing import List
 
+
 class CardType(Enum):
     MONSTER = "m"
     SPELL = "s"
@@ -19,63 +20,59 @@ class _ReadMode(Enum):
     COMBOS = "COMBOS"
 
 
-class Card():
-    def __init__(self, name: str, count: int, type: CardType, deck_type: DeckCardType) -> None:
+class Card:
+    def __init__(
+        self, name: str, count: int, type: CardType, deck_type: DeckCardType
+    ) -> None:
         self.name = name
         self.count = count
         self.type = type
         self.deck_type = deck_type
-    
+
     def __str__(self) -> str:
         return self.name
 
     def __repr__(self) -> str:
         return self.__str__()
-    
+
     def __eq__(self, other):
         return other.name == self.name and other.count == self.count
-    
+
     def __hash__(self) -> int:
         return hash(f"{self.name}{self.count}{self.type.value}{self.deck_type.value}")
 
 
-class Combo():
+class Combo:
     def __init__(self, cards: List[Card], weight: int) -> None:
         self.cards = cards
         self.weight = weight
 
     def __str__(self) -> str:
-        card_names = [
-            i.name
-            for i in self.cards
-        ]
+        card_names = [i.name for i in self.cards]
         return " + ".join(card_names)
-    
+
     def __repr__(self) -> str:
         return self.__str__()
-    
+
     def __eq__(self, other):
         eq = True
         for card in other.cards:
             eq = eq and card in self.cards
         eq = eq and self.weight == other.weight
         return eq
-    
+
     def __hash__(self) -> int:
-        return hash("".join([ str(x) for x in self.cards ] + [ str(self.weight) ]))
+        return hash("".join([str(x) for x in self.cards] + [str(self.weight)]))
 
 
-class Deck():
+class Deck:
     def __init__(self, initial_cards: List[Card], initial_combos: List[Combo]) -> None:
         self.cards = initial_cards
         self.combos = initial_combos
         self._calculate_size()
-    
+
     def _calculate_size(self):
-        self.size = sum([
-            i.count
-            for i in self.cards
-        ])
+        self.size = sum([i.count for i in self.cards])
 
     def add_card(self, card: Card):
         self.cards.append(card)
@@ -85,38 +82,26 @@ class Deck():
         self.combos.append(combo)
 
     def card_by_name(self, name: str):
-        card = list(filter(
-            lambda x: x.name == name,
-            self.cards
-        ))
+        card = list(filter(lambda x: x.name == name, self.cards))
         if len(card) > 1:
-            raise ValueError(f"Too many cards match \"{name}\"")
+            raise ValueError(f'Too many cards match "{name}"')
         elif len(card) == 0:
-            raise ValueError(f"No card matched \"{name}\"")
+            raise ValueError(f'No card matched "{name}"')
         else:
             return card[0]
-    
+
     def cards_by_deck_type(self, type: DeckCardType):
-        cards = list(filter(
-            lambda x: x.deck_type == type,
-            self.cards
-        ))
+        cards = list(filter(lambda x: x.deck_type == type, self.cards))
         return cards
-    
+
     def get_simulated_cards(self):
         out = []
         for card in self.cards:
-            out.extend([
-                card for _ in range(0,card.count)
-            ])
+            out.extend([card for _ in range(0, card.count)])
         return out
 
-    
     def __str__(self) -> str:
-        return "\n".join([
-            f"{i.name}:{i.count}"
-            for i in self.cards
-        ])
+        return "\n".join([f"{i.name}:{i.count}" for i in self.cards])
 
     @classmethod
     def from_file(_, filepath: str):
@@ -137,28 +122,25 @@ class Deck():
                         match mode:
                             case _ReadMode.CARDS:
                                 card = sline.split(" ")
-                                deck.add_card(Card(
-                                    card[0],
-                                    int(card[1]),
-                                    CardType(card[2]),
-                                    DeckCardType(card[3])
-                                ))
+                                deck.add_card(
+                                    Card(
+                                        card[0],
+                                        int(card[1]),
+                                        CardType(card[2]),
+                                        DeckCardType(card[3]),
+                                    )
+                                )
                             case _ReadMode.COMBOS:
                                 combo = sline.split(" ")
                                 weight = int(combo[0])
                                 cards_str = combo[1:]
                                 try:
-                                    cards = [
-                                        deck.card_by_name(i)
-                                        for i in cards_str
-                                    ]
+                                    cards = [deck.card_by_name(i) for i in cards_str]
                                 except Exception as e:
                                     print(f"Not adding combo {sline}")
                                     print(e)
                                     continue
-                                deck.add_combo(Combo(
-                                    cards, weight
-                                ))
+                                deck.add_combo(Combo(cards, weight))
                             case _:
                                 pass
         return deck

@@ -17,31 +17,17 @@ COMBOS
 """
     request.cls.content = file_txt
 
-_CARDS = [
-        deck.Card(
-            "snake_eye_ash",
-            3,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-        ),
-        deck.Card(
-            "snake_eye_poplar",
-            2,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-        ),
-        deck.Card(
-            "snake_eyes_diabellstar",
-            1,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.BRICK
-        ),
-    ]
 
-_COMBOS = [
-        deck.Combo([_CARDS[0]], 2),
-        deck.Combo(_CARDS[1:2], 1)
-    ]
+_CARDS = [
+    deck.Card("snake_eye_ash", 3, deck.CardType.MONSTER, deck.DeckCardType.ENGINE),
+    deck.Card("snake_eye_poplar", 2, deck.CardType.MONSTER, deck.DeckCardType.ENGINE),
+    deck.Card(
+        "snake_eyes_diabellstar", 1, deck.CardType.MONSTER, deck.DeckCardType.BRICK
+    ),
+]
+
+_COMBOS = [deck.Combo([_CARDS[0]], 2), deck.Combo(_CARDS[1:2], 1)]
+
 
 @pytest.mark.parametrize("card", _CARDS)
 def test_card_str_repr(card):
@@ -60,41 +46,45 @@ class ParserTest(unittest.TestCase):
         assert d.__class__ == deck.Deck
         cards = d.cards
         assert len(cards) == 3
-        assert deck.Card(
-            "snake_eye_ash",
-            3,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-        ) in cards
-        assert deck.Card(
-            "snake_eye_poplar",
-            2,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-        ) in cards
-        assert deck.Card(
-            "snake_eyes_diabellstar",
-            1,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.BRICK
-        ) in cards
-        c1 = deck.Combo([
+        assert (
             deck.Card(
-            "snake_eye_ash",
-            3,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-            )],
-            2
+                "snake_eye_ash", 3, deck.CardType.MONSTER, deck.DeckCardType.ENGINE
+            )
+            in cards
         )
-        c2 = deck.Combo([
+        assert (
             deck.Card(
-            "snake_eye_poplar",
+                "snake_eye_poplar", 2, deck.CardType.MONSTER, deck.DeckCardType.ENGINE
+            )
+            in cards
+        )
+        assert (
+            deck.Card(
+                "snake_eyes_diabellstar",
+                1,
+                deck.CardType.MONSTER,
+                deck.DeckCardType.BRICK,
+            )
+            in cards
+        )
+        c1 = deck.Combo(
+            [
+                deck.Card(
+                    "snake_eye_ash", 3, deck.CardType.MONSTER, deck.DeckCardType.ENGINE
+                )
+            ],
             2,
-            deck.CardType.MONSTER,
-            deck.DeckCardType.ENGINE
-            )],
-            1
+        )
+        c2 = deck.Combo(
+            [
+                deck.Card(
+                    "snake_eye_poplar",
+                    2,
+                    deck.CardType.MONSTER,
+                    deck.DeckCardType.ENGINE,
+                )
+            ],
+            1,
         )
         assert c1 in d.combos
         assert c2 in d.combos

@@ -1,10 +1,15 @@
+.ONESHELL:
+
 alias t := test
 alias i := install
 
-install:
-    conda install --yes matplotlib scipy
+create:
+    conda env -f conda.yaml
 
-test: install
-    conda install --yes pytest pytest-cov
-    pip install pytest-notebook
+install:
+    conda install -f conda.yaml
+
+set shell := ["bash", "-uc"]
+
+test:
     python -m pytest --cov=models/ --cov-report term-missing
