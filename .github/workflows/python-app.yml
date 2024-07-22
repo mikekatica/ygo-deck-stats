@@ -29,6 +29,13 @@ jobs:
         echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
         sudo apt update && sudo apt install just anaconda
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Conda setup
+      run: |
+        mkdir -p ~/miniconda3
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        rm -rf ~/miniconda3/miniconda.sh
+        ~/miniconda3/bin/conda init bash
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
