@@ -34,6 +34,9 @@ class Card():
     
     def __eq__(self, other):
         return other.name == self.name and other.count == self.count
+    
+    def __hash__(self) -> int:
+        return hash(f"{self.name}{self.count}{self.type.value}{self.deck_type.value}")
 
 
 class Combo():
@@ -50,6 +53,16 @@ class Combo():
     
     def __repr__(self) -> str:
         return self.__str__()
+    
+    def __eq__(self, other):
+        eq = True
+        for card in other.cards:
+            eq = eq and card in self.cards
+        eq = eq and self.weight == other.weight
+        return eq
+    
+    def __hash__(self) -> int:
+        return hash("".join([ str(x) for x in self.cards ] + [ str(self.weight) ]))
 
 
 class Deck():
