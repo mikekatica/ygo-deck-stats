@@ -8,7 +8,14 @@ create:
     conda env create -f conda.yaml
 
 install:
-    conda install -f conda.yaml
+    conda activate env
+    conda install --yes matplotlib scipy pytest pytest-cov ipython ipykernel
+    pip install pytest-notebook
+
+configure:
+    conda activate env
+    ipython kernel install --name "python3" --user
 
 test:
+    conda activate env
     python -m pytest --cov=models/ --cov-report term-missing
