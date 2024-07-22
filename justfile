@@ -7,4 +7,4 @@ install:
 test: install
     conda install pytest pytest-cov
     pip install pytest-notebook
-    python -m pytest
+    python -m pytest --cov=models/ --cov-report term-missing
