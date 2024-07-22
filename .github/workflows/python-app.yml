@@ -13,8 +13,11 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
