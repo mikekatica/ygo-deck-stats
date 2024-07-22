@@ -47,4 +47,5 @@ jobs:
         just c
     - name: Test with pytest
       run: |
+        conda activate env
         just t
