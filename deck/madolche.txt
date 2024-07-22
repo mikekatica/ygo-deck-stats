@@ -3,11 +3,11 @@ ash_blossom_and_joyous_spring 3 m ne
 infinte_impermenance 3 t ne
 ghost_ogre_and_snow_rabbit 2 m ne
 effect_veiler 3 m ne
+nibiru_the_primal_being 3 m ne
 herald_of_orange_light 3 m ne
+psy_framegear_gamma 1 m ne
 vernusylph_of_the_misting_seedlings 3 m e
 emergency_teleport 3 s e
-vernusylph_of_the_flourishing_hills 2 m e
-vernusylph_of_the_flowering_fields 1 m e
 noh_punk_ze_amin 1 m e
 noh_punk_foxy_tune 1 m e
 noh_punk_deer_note 1 m b
@@ -19,6 +19,7 @@ madolche_promenade 1 t b
 madolche_petingcessour 3 m e
 madolche_hootcake 2 m e
 madolche_anjelly 3 m e
+psy_frame_driver 1 m b
 COMBOS
 2 madolche_anjelly
 2 madolche_petingcessour
@@ -33,15 +34,14 @@ COMBOS
 3 vernusylph_of_the_misting_seedlings ghost_ogre_and_snow_rabbit
 3 vernusylph_of_the_misting_seedlings effect_veiler
 3 vernusylph_of_the_misting_seedlings herald_of_orange_light
-3 vernusylph_of_the_misting_seedlings vernusylph_of_the_flourishing_hills
-3 vernusylph_of_the_misting_seedlings vernusylph_of_the_flowering_fields
+3 vernusylph_of_the_misting_seedlings nibiru_the_primal_being
 3 vernusylph_of_the_misting_seedlings emergency_teleport
-4 madolche_hootcake vernusylph_of_the_flourishing_hills
 4 madolche_hootcake emergency_teleport
-3 madolche_hootcake noh_punk_foxy_tune
+3 madolche_messangelato emergency_teleport
+2 madolche_hootcake noh_punk_foxy_tune
 1 madolche_messangelato emergency_teleport
-3 noh_punk_ze_amin vernusylph_of_the_flourishing_hills
 5 madolche_petingcessour vernusylph_of_the_misting_seedlings
+5 madolche_anjelly vernusylph_of_the_misting_seedlings
 6 madolche_petingcessour emergency_teleport
 6 madolche_hootcake madolche_anjelly emergency_teleport
 6 madolche_hootcake madolche_messangelato emergency_teleport

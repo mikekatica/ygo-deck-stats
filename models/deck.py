@@ -75,6 +75,8 @@ class Deck():
         ))
         if len(card) > 1:
             raise ValueError(f"Too many cards match \"{name}\"")
+        elif len(card) == 0:
+            raise ValueError(f"No card matched \"{name}\"")
         else:
             return card[0]
     
@@ -129,10 +131,15 @@ class Deck():
                                 combo = sline.split(" ")
                                 weight = int(combo[0])
                                 cards_str = combo[1:]
-                                cards = [
-                                    deck.card_by_name(i)
-                                    for i in cards_str
-                                ]
+                                try:
+                                    cards = [
+                                        deck.card_by_name(i)
+                                        for i in cards_str
+                                    ]
+                                except Exception as e:
+                                    print(f"Not adding combo {sline}")
+                                    print(e)
+                                    continue
                                 deck.add_combo(Combo(
                                     cards, weight
                                 ))
