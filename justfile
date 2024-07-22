@@ -5,7 +5,7 @@ alias c := create
 set shell := ["bash", "-uc"]
 
 create:
-    conda env -f conda.yaml
+    conda env create -f conda.yaml
 
 install:
     conda install -f conda.yaml
